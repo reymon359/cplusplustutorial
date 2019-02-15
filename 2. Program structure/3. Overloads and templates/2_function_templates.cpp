@@ -105,4 +105,52 @@ Note also how T is also used to declare a local variable of that (generic) type 
 
 T result;
 
-Therefore, result will be a variable of the same type as the parameters a and b, and as the type returned by the function.*/
+Therefore, result will be a variable of the same type as the parameters a and b, and as the type returned by the function.
+In this specific case where the generic type T is used as a parameter for sum, the compiler is even able to deduce the data
+type automatically without having to explicitly specify it within angle brackets. Therefore, instead of explicitly specifying
+the template arguments with:
+
+k = sum<int> (i,j);
+h = sum<double> (f,g);
+
+It is possible to instead simply write:
+
+k = sum (i,j);
+h = sum (f,g);
+
+without the type enclosed in angle brackets. Naturally, for that, the type shall be unambiguous. If sum is called with
+arguments of different types, the compiler may not be able to deduce the type of T automatically.
+
+Templates are a powerful and versatile feature. They can have multiple template parameters, and the function can still
+use regular non-templated types. For example:
+
+// function templates
+#include <iostream>
+using namespace std;
+
+template <class T, class U>
+bool are_equal (T a, U b)
+{
+  return (a==b);
+}
+
+int main ()
+{
+  if (are_equal(10,10.0))
+    cout << "x and y are equal\n";
+  else
+    cout << "x and y are not equal\n";
+  return 0;
+}
+
+Note that this example uses automatic template parameter deduction in the call to are_equal:
+
+are_equal(10,10.0)
+
+Is equivalent to:
+
+are_equal<int,double>(10,10.0)
+
+There is no ambiguity possible because numerical literals are always of a specific type: Unless
+otherwise specified with a suffix, integer literals always produce values of type int, and floating-point
+literals always produce values of type double. Therefore 10 has always type int and 10.0 has always type double.*/
