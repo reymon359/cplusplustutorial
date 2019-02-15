@@ -1,0 +1,5 @@
+# I will not upload the compiled executables files.
+# Just build the .cpp if you need them
+
+*.exe
+*.o
