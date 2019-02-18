@@ -4,6 +4,8 @@ These are some of the notes and exercises from the c++ tutorial http://www.cplus
 
 I was learning C++ form the [cplusplus](http://www.cplusplus.com) tutorial and practising and compiling in my pc the examples and then I thought i could pass it to markdown to read it more easily and to practise markdown too. So here is my attempt. Of course none of the text here is written by me. It all belongs to cplusplus.
 
+Edit: I just realized that this will take a lot of time. So i will keep just trying the code from the tutorial on my own and thats all. Maybe in a futre i will end the markdown file.
+
 Table of contents
 =================
 
